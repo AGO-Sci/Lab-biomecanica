@@ -1,0 +1,8 @@
+/* El logotipo entregado contiene tipografía negra: se presenta sobre blanco. */
+.top .brand{display:block;flex:0 0 188px;width:188px;min-width:188px;height:104px;background:#fff url('lab_logo.png') center/contain no-repeat;border-radius:10px;overflow:hidden;position:relative}
+.top .brand .mark,.top .brand .brandtext{position:absolute;width:1px;height:1px;clip-path:inset(50%);overflow:hidden;white-space:nowrap}
+.top .nav{min-height:120px}
+.header .logo{display:block;flex:0 0 188px;width:188px;height:104px;max-width:none;background:#fff url('lab_logo.png') center/contain no-repeat;border-radius:10px;overflow:hidden;font-size:0;line-height:0;color:transparent}
+.header .logo small{font-size:0;line-height:0;color:transparent}
+.header-inner{min-height:120px}
+@media(max-width:620px){.top .brand{flex-basis:145px;width:145px;min-width:145px;height:82px}.top .nav{min-height:96px}.header .logo{flex-basis:145px;width:145px;height:82px}.header-inner{min-height:98px}}
