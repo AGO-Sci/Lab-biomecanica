@@ -29,6 +29,12 @@
     document.querySelectorAll('[data-lang]').forEach(btn=>btn.addEventListener('click',()=>setLanguage(btn.dataset.lang)));
     const menu=document.querySelector('.menu'),nav=document.querySelector('#nav');menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open))});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false')}));document.querySelector('#year').textContent=new Date().getFullYear();setLanguage(localStorage.getItem('lab-language')==='en'?'en':'es');
     const routes={'#inicio':'index.html','#investigacion':'investigacion.html','#tecnologia':'tecnologia.html','#equipo':'equipo.html','#innovacion':'innovacion.html','#contacto':'contacto.html'};nav.querySelectorAll('a').forEach(a=>{if(routes[a.getAttribute('href')])a.setAttribute('href',routes[a.getAttribute('href')])});
+    // El inicio incorpora el logotipo como imagen real, también si el CSS anterior está en caché.
+    const homeLogo=document.querySelector('.top .brand');
+    homeLogo.replaceChildren();
+    homeLogo.setAttribute('aria-label','Laboratorio de Biomecánica y Desempeño Humano — inicio');
+    homeLogo.style.cssText='display:flex;align-items:center;justify-content:center;background:#fff;border-radius:10px;width:188px;min-width:188px;height:104px;padding:5px;overflow:hidden';
+    const logoImage=document.createElement('img');logoImage.src='lab_logo.png';logoImage.alt='Universidad Central de Chile — Laboratorio de Biomecánica y Desempeño Humano';logoImage.style.cssText='display:block;width:100%;height:100%;object-fit:contain';homeLogo.appendChild(logoImage);
   </script>
 </body>
 </html>
